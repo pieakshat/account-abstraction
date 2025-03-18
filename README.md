@@ -64,3 +64,8 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+just rying to build something 
+
+minimalAccount.sol is the entrypoint account in our contract
+basically we are checking if the signer of a transaction is the owner of the contract. 
