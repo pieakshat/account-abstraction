@@ -39,8 +39,9 @@ contract MinimalAccount is IAccount, Ownable {
     function execute(
      address dest,  // the destination address contract to call 
      uint256 value, // the amount of ether to send along with the call 
-     bytes calldata functionData)   // the data for the function call 
-     external requireFromEntryPoint {
+     bytes calldata functionData)   // the data for the function call
+     // functionData is the ABI-encoded payload that specifies what function to call with what arguments
+     external requireFromEntryPointOrOwner {
         (bool success, bytes memory result) = dest.call{value: value}(functionData); 
         if (!success) {
             revert MinimalAccount__CallFailed(result); 
