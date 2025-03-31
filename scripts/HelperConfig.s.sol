@@ -48,7 +48,7 @@ contract HelperConfig is Script {
         return NetworkConfig({entryPoint: address(0), account: BURNER_WALLET});  
     }
 
-    function getOrCreateAnvilEthConfig() public returns(NetworkConfig memory) {
+    function getOrCreateAnvilEthConfig() public returns(NetwosrkConfig memory) {
         if (localNetworkConfig.account != address(0)) {
             return localNetworkConfig; 
         }
